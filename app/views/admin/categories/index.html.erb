@@ -1,0 +1,36 @@
+<h1>Categorias</h1>
+
+<%= link_to "Cadastrar", new_admin_category_path, :class => 'btn btn-primary' %>
+<% if @categories.present? %>
+<table class="table">
+  <thead>
+  <tr>
+    <th width="20">id</th>
+    <th>Nome</th>
+    <th>Criado em:</th>
+    <th width="200">Ações</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.id %></td>
+        <td><%= category.name %></td>
+        <td><%= category.created_at %></td>
+        <td>
+          <%= link_to 'Exibe', admin_category_path(category.id) %>
+
+          | <%= link_to 'Alterar', edit_admin_category_path(category.id) %>
+
+          | <%= link_to 'Excluir', admin_category_path(category.id), method: :delete %>
+
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+
+</table>
+<% else %>
+    <h4>Nenhum Registro</h4>
+<% end %>

@@ -1,0 +1,38 @@
+<h1>Trabalhos</h1>
+
+<%= link_to "Cadastrar", new_admin_work_path, :class => 'btn btn-primary' %>
+
+<% if @works.present? %>
+<table class="table">
+  <thead>
+  <tr>
+    <th width="20">id</th>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Tags</th>
+    <th width="200">Ações</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @works.each do |work| %>
+      <tr>
+        <td><%= work.id %></td>
+        <td><%= work.name %></td>
+        <td><%= work.description %></td>
+        <td><%= work.tags %></td>
+        <td>
+          <%= link_to 'Exibir', admin_work_path(work.id) %>
+
+          | <%= link_to 'Editar', edit_admin_work_path(work.id) %>
+
+          | <%= link_to 'Excluir', admin_work_path(work.id), method: :delete %>
+
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<% else %>
+<h4>Nenhum Registro</h4>
+<% end %>

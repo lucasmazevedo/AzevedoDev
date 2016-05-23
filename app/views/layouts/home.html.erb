@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="AzevedoDev">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>AzevedoDev - Desenvolvimento Mobile || Desenvolvimento Web</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- FONT -->
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+  <!-- core CSS -->
+  <%= stylesheet_link_tag "home/home" %>
+  <!-- main JS libs -->
+  <%= javascript_include_tag "home/home" %>
+  <!-- main JS libs -->
+  <script>
+    $(document).ready(function(){
+      $(".carousel").carousel({
+        interval:0
+      });
+
+      $(".footer_nav a , .author-socials a").tooltip();
+
+      (function carousel_call() {
+        $(".work-examples").carouFredSel({
+            auto: true,
+            items: 7,
+            debug: true,
+            prev: ".work-examples-prev",
+            next: ".work-examples-next",
+            direction: "up",
+            scroll: {
+                items: 1,
+                easing: "linear",
+                duration: 500,
+                pauseOnHover: true
+            }
+        });
+      })();
+
+      $('#contact_email').blur(function () {
+                if ($(this).val() != '') {
+                    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+                    if (pattern.test($(this).val())) {
+                        $('#symbol').css({
+                            'background': 'url(<%= asset_url '/icons/ok.png' %>) no-repeat center center'
+                        });
+                    } else {
+                        $('#symbol').css({
+                            'background': 'url(images/icons/x.png) no-repeat center center'
+                        });
+                    }
+                } else {
+                    $('#symbol').css({
+                        'background': 'url(images/icons/x.png) no-repeat center center'
+                    });
+                }
+            });
+
+    });
+  </script>
+
+
+
+</head>
+<body>
+<div class="body_wrap">
+  <nav class="topmenu clearfix">
+    <ul>
+      <li class="white-border"><a href="#home">Início</a></li>
+      <li class="blue-border"><a href="#works">Trabalhos</a></li>
+      <li class="green-border"><a href="#services">Serviços</a></li>
+      <li class="pink-border"><a href="#about">Quem Sou eu?</a></li>
+      <li class="purple-border"><a href="#blog">Blog</a></li>
+      <li class="orange-border"><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+  <%= yield %>
+</div>
+</body>
+</html>
+
+
+

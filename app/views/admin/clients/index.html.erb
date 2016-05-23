@@ -1,0 +1,42 @@
+<h1>Clientes</h1>
+
+<%= link_to "Cadastrar", new_admin_client_path, :class => 'btn btn-primary' %>
+
+<% if @clients.present? %>
+<table class="table">
+  <thead>
+  <tr>
+    <th width="20">id</th>
+    <th>Nome</th>
+    <th>Endereço</th>
+    <th>Responsável</th>
+    <th>Telefone</th>
+    <th width="200">Ações</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.id %></td>
+        <td><%= client.name %></td>
+        <td><%= client.address %></td>
+        <td><%= client.onwer %></td>
+        <td><%= client.phone %><br><%= client.cellphone %></td>
+
+        <td>
+          <%= link_to 'Exibir', admin_client_path(client.id) %>
+
+          | <%= link_to 'Alterar', edit_admin_client_path(client.id) %>
+
+          | <%= link_to 'Excluir', admin_client_path(client.id), method: :delete, data:{confirm: "Você realmente quer excluir?"} %>
+
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+
+</table>
+<% else %>
+<h1>Nenhum Registro</h1>
+<% end %>

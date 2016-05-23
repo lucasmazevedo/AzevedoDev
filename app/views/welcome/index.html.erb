@@ -1,0 +1,1057 @@
+  <section id="home" class="clearfix first-section">
+    <div class="inner">
+      <div class="container">
+        <%= image_tag "logo.gif" %>
+        <p class="author-remark text-gray">Aqui você pode saber mais sobre mim e sobre o que faço, dar uma olhada no meu portfolio ou entrar em contato para novos jobs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="works" class="clearfix second-section">
+    <div class="inner">
+
+      <div class="section-ico">
+          <div class="ico-bg second-section-ico-bg"></div>
+          <%= image_tag "icons/work-ico.png" %>
+          <h5 class="text-blue">Meu Trabalhos</h5>
+      </div>
+
+      <div class="container">
+        <!-- Carousel -->
+        <div id="myWork" class="carousel slide text-left">
+
+          <div class="carousel-inner">
+
+            <% @works.each_with_index do |work, i| %>
+
+            <% if i == 0 %>
+               <div class="item img3 active">
+            <% else %>
+                <div class="item img3">
+            <% end %>
+
+                <div class="slide-img  clearfix pull-left">
+                <%= image_tag work.image.works.url, class: "animate3", :data => { :animate => "flipInY"}  %>
+                </div>
+
+                <div class="slide-text clearfix pull-right">
+                <h2 class="slide-title animate3" data-animate="bounceInDown"><a href="#"><%= work.name -%></a></h2>
+
+                <p data-animate="lightSpeedIn" class="animate3"><%= work.description -%></p>
+                <% work.tags.split(",").each_with_index do |tag, i|
+                  animate_index = i + 4
+                  %>
+
+                <span class="tag animate<%= animate_index-%> " data-animate="bounceInUp"><%= tag -%></span>
+
+                <% end -%>
+
+                <% if work.link.present? -%>
+                <%= link_to content_tag(:span, "Ver Online"), work.link, class: "button blue animate8", data: { animate: "bounceInUp"} -%>
+                <% end -%>
+              </div>
+            </div>
+          <% end -%>
+
+          </div>
+
+          <a class="left carousel-control" href="#myWork" data-slide="prev">
+          <span class="icon-prev"></span>
+          </a>
+          <a class="right carousel-control" href="#myWork" data-slide="next">
+          <span class="icon-next"></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="services" class="clearfix third-section" >
+    <div class="inner">
+      <div class="container">
+
+        <div class="section-ico">
+            <div class="ico-bg third-section-ico-bg"></div>
+            <%= image_tag "icons/service-ico.png" %>
+            <h5 class="text-green">Serviços</h5>
+        </div>
+
+        <!-- <h5 class="top-title">O que eu posso fazer?</h5> -->
+        <h2 class="title">Atualmente trabalhando com:</h2>
+
+        <div id="services-carousel" class="carousel slide text-left">
+                <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+              <div class="item active">
+                  <div class="row">
+                      <div class="col-sm-3">
+                          <div class="widget-text">
+                              <h3 class="services-title">PHP DEVELOPMENT</h3>
+
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                  when
+                                  an unknown printer took a galley of type and scrambled it to make a type
+                                  specimen
+                                  book. </p>
+                          </div>
+                          <a href="#" class="link-view">View my resume</a>
+                      </div>
+                      <div class="col-sm-5">
+                          <div class="service-img">
+                              <%= image_tag "aslanta-line3.png", class: "aslant-line-left" -%>
+                              <%= image_tag "temp/service-img.png", class: "aslant-line" -%>
+                              <%= image_tag "aslanta-line3.png", class: "aslant-line-right"-%>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                          <h3 class="services-title">EXAMPLES OF WORKS</h3>
+
+                          <div class="examples">
+                              <ul class="work-examples">
+                                  <li><a href="#">City break Wordpress Theme</a></li>
+                                  <li><a href="#">Holy Church web admin</a></li>
+                                  <li><a href="#">StantleyBet Web interface </a></li>
+                                  <li><a href="#">Duster Buster internal admin</a></li>
+                                  <li><a href="#">Jeans Online webstore backend</a></li>
+                                  <li><a href="#">Hello Kity Supersite</a></li>
+                                  <li><a href="#">City break Wordpress Theme</a></li>
+                                  <li><a href="#">Holy Church web admin</a></li>
+                                  <li><a href="#">StantleyBet Web interface </a></li>
+                                  <li><a href="#">Duster Buster internal admin</a></li>
+                                  <li><a href="#">Jeans Online webstore backend</a></li>
+                                  <li><a href="#">Hello Kity Supersite</a></li>
+                              </ul>
+                              <div class="clearfix"></div>
+                              <a class="up work-examples-next" href="#"><span>MORE +</span></a>
+                              <a class="down work-examples-prev" href="#"><span>PREV -</span></a>
+                          </div>
+                      </div>
+                      <div class="clear"></div>
+                      <div class="col-sm-12 carousel-footer">
+                          <a class="button green" href="#"><span>I'm available for hire</span></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="item">
+                  <div class="row">
+                      <div class="col-sm-3">
+                          <div class="widget-text">
+                              <h3 class="services-title">PHP DEVELOPMENT</h3>
+
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                  when
+                                  an unknown printer took a galley of type and scrambled it to make a type
+                                  specimen
+                                  book. </p>
+                          </div>
+                          <a href="#" class="link-view">View my resume</a>
+                      </div>
+                      <div class="col-sm-5">
+                          <div class="service-img">
+                              <%= image_tag "aslanta-line3.png", class: "aslant-line-left" -%>
+                              <%= image_tag "temp/skew_slider1.png", class: "aslant-line" -%>
+                              <%= image_tag "aslanta-line3.png", class: "aslant-line-right"-%>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                          <div class="widget-text">
+                              <h3 class="services-title">PHP DEVELOPMENT</h3>
+
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                  when
+                                  an unknown printer took a galley of type and scrambled it to make a type
+                                  specimen
+                                  book. </p>
+                          </div>
+                      </div>
+                      <div class="clear"></div>
+                      <div class="col-sm-12 carousel-footer">
+                          <a class="button green" href="#"><span>I'm available for hire</span></a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="item">
+                  <div class="row">
+                      <div class="col-sm-3">
+                          <div class="widget-text">
+                              <h3 class="services-title">PHP DEVELOPMENT</h3>
+
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                  when
+                                  an unknown printer took a galley of type and scrambled it to make a type
+                                  specimen
+                                  book. </p>
+                          </div>
+                          <a href="#" class="link-view">View my resume</a>
+                      </div>
+                      <div class="col-sm-5">
+                          <div class="service-img">
+                              <%= image_tag "aslanta-line3.png", class: "aslant-line-left" -%>
+                              <%= image_tag "temp/service-img.png", class: "aslant-line" -%>
+                              <%= image_tag "aslanta-line3.png", class: "aslant-line-right"-%>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                          <div class="widget-text">
+                              <h3 class="services-title">PHP DEVELOPMENT</h3>
+
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                  when
+                                  an unknown printer took a galley of type and scrambled it to make a type
+                                  specimen
+                                  book. </p>
+                          </div>
+                      </div>
+                      <div class="clear"></div>
+                      <div class="col-sm-12 carousel-footer">
+                          <a class="button green" href="#"><span>I'm available for hire</span></a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="item">
+                  <div class="row">
+                      <div class="col-sm-3">
+                          <div class="widget-text">
+                              <h3 class="services-title">PHP DEVELOPMENT</h3>
+
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                  when
+                                  an unknown printer took a galley of type and scrambled it to make a type
+                                  specimen
+                                  book. </p>
+                          </div>
+                          <a href="#" class="link-view">View my resume</a>
+                      </div>
+                      <div class="col-sm-5">
+                          <div class="service-img">
+                              <%= image_tag "aslanta-line3.png", class: "aslant-line-left" -%>
+                              <%= image_tag "temp/service-img.png", class: "aslant-line" -%>
+                              <%= image_tag "aslanta-line3.png", class: "aslant-line-right"-%>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                          <div class="widget-text">
+                              <h3 class="services-title">PHP DEVELOPMENT</h3>
+
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                  when
+                                  an unknown printer took a galley of type and scrambled it to make a type
+                                  specimen
+                                  book. </p>
+                          </div>
+                      </div>
+                      <div class="clear"></div>
+                      <div class="col-sm-12 carousel-footer">
+                          <a class="button green" href="#"><span>I'm available for hire</span></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#services-carousel" data-slide="prev">
+              <span class="icon-prev"></span>
+          </a>
+          <a class="right carousel-control" href="#services-carousel" data-slide="next">
+              <span class="icon-next"></span>
+          </a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="clearfix fourth-section">
+    <div class="inner">
+      <div class="container">
+
+        <div class="section-ico">
+            <div class="ico-bg fourth-section-ico-bg"></div>
+            <%= image_tag "icons/about-ico.png" %>
+            <h5 class="text-pink">Quem sou eu?</h5>
+        </div>
+
+        <h5 class="top-title">programador, apaixonado por tecnologia, ciclista...</h5>
+        <h2 class="title">Basicamente, um cara legal!</h2>
+
+            <div class="author-description clearfix text-left">
+                <div class="author-img pull-left clearfix">
+                <%= image_tag "temp/author-img.png", class: "" -%>
+                <%= image_tag "aslanta-line2.png", class: "aslant-line-left" -%>
+                </div>
+                <div class="author-text pull-left clearfix">
+                    <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos dertuis
+                        himenaeos.
+                        Sed molestie augue sit amet leo consequat posuere.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin
+                        vel ante a orci tempus eleifend ut et magna.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies
+                        ac tempor dui sagittis.
+                        In condimentum facilisis porta. Sed nec diam eu diam mattis viverra.
+                        Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien
+                        justo in libero.
+                        Vestibulum mollis mauris enim. Morbi euismod magna.</p>
+
+                    <div class="clear"></div>
+
+                    <div class="author-socials pull-left">
+                        <a href="#" data-toggle="tooltip" title="Follow me on facebook">
+                        <%= image_tag "icons/fb_about_ico.png" %></a>
+                        <a href="#" data-toggle="tooltip" title="Follow me on Google+">
+                        <%= image_tag "icons/google_about_ico.png"-%></a>
+                        <a href="#" data-toggle="tooltip" title="Follow me on twitter">
+                        <%= image_tag "icons/tw_about_ico"-%></a>
+                        <a href="#" data-toggle="tooltip" title="Send me email">
+                        <%= image_tag "icons/em_about_ico"-%></a>
+                        <a href="#" data-toggle="tooltip" title="Follow me on Dribble">
+                        <%= image_tag "icons/dribble_about_ico"-%></a>
+                    </div>
+                    <a href="#" class="link-download pull-right">Download my resume</a>
+                </div>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="clearfix fifth-section">
+    <div class="inner">
+      <div class="container">
+
+        <div class="section-ico">
+            <div class="ico-bg fifth-section-ico-bg"></div>
+            <%= image_tag "icons/blog-ico.png" %>
+            <h5 class="text-purple">Blog</h5>
+        </div>
+
+        <h5 class="top-title">HERE IS THE LATEST BLOG POST. PRESS THE SIDE ARROWS TO VIEW MORE POSTS</h5>
+      <h2 id="title-post" class="title"></h2>
+
+        <div class="row">
+          <div class="col-lg-7 col-md-7 col-sm-6">
+            <div class="post-category carousel slide active" data-ride="carousel" data-index="1">
+              <div class="carousel-inner">
+              <article class="post-item item active">
+                <div class="post-inner">
+                  <div class="post-title">Tutorials & Experiments</div>
+                  <div class="post-entry clearfix">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                   <%= image_tag "temp/post-img1.png", class: "img-rounded surounded-img" -%>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+                  </div><!-- / post entry -->
+
+                  <div class="post-tags">
+                    <h3>TAGS IN THIS ARTICLE</h3>
+                    <span>DO IT YOURSELF</span>
+                    <span>MAINTENANCE</span>
+                    <span>DESIGN</span>
+                    <span>COUCH</span>
+                  </div><!-- /post tags -->
+
+                  <div class="comment_list clearfix">
+                    <h3>Already 8 comments</h3>
+                      <ol>
+                        <li class="comment clearfix">
+                          <div class="comment-item">
+                            <div class="comment_body clearfix">
+                              <div class="comment_avatar">
+                              <%= image_tag "temp/ava1.png"-%>
+                              </div>
+                              <div class="comment_text">
+                                <a href="#" class="link-author">Mary Riley</a>
+                                <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                <div class="clear"></div>
+                                <div class="comment_entry">
+                                  Britain’s phone hacking claimed another casualty on Monday Yates, the deputy of London’s Metropolitan Police, resigned a day after the country’s top police officer quit and Rebekah Brooks, the former chief executive of Rupert Murdoch’s News International
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                          </div><!-- /comment item -->
+
+                            <ul class="children">
+                              <li class="comment clearfix">
+                                <div class="comment-item">
+                                  <div class="comment_body clearfix">
+                                    <div class="comment_avatar">
+                                        <%= image_tag "temp/ava1.png"-%>
+                                    </div>
+                                    <div class="comment_text">
+                                      <a href="#" class="link-author">Mary Riley</a>
+                                      <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                      <div class="clear"></div>
+                                      <div class="comment_entry">Rebekah Brooks, the former chief executive Rupert Murdoch’s News International was arrested on suspicion of illegally hello intercepting phone calls and bribing police.</div>
+                                    </div>
+                                    <div class="clear"></div>
+                                  </div>
+                                </div><!-- /comment item -->
+                                  <ul class="children">
+                                    <li class="comment clearfix">
+                                      <div class="comment-item">
+                                        <div class="comment_body clearfix">
+                                          <div class="comment_avatar">
+                                              <%= image_tag "temp/ava1.png"-%>
+                                          </div>
+                                          <div class="comment_text">
+                                            <a href="#" class="link-author">Mary Riley</a>
+                                            <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                            <div class="clear"></div>
+                                            <div class="comment_entry">Rebekah Brooks, the former chief executive Rupert Murdoch’s News International was arrested on suspicion of illegally hello intercepting phone calls and bribing police.</div>
+                                          </div>
+                                          <div class="clear"></div>
+                                        </div>
+                                      </div><!-- /comment item -->
+                                    </li><!-- /comment -->
+                                  </ul><!-- / children comment -->
+                              </li><!-- /comment -->
+                            </ul><!-- / children comment -->
+                        </li><!-- /comment -->
+
+                        <li class="comment clearfix">
+                          <div class="comment-item">
+                            <div class="comment_body clearfix">
+                              <div class="comment_avatar">
+                                  <%= image_tag "temp/ava1.png"-%>
+                              </div>
+                              <div class="comment_text">
+                                <a href="#" class="link-author">Mary Riley</a>
+                                <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                <div class="clear"></div>
+                                <div class="comment_entry">
+                                  Britain’s phone hacking claimed another casualty on Monday Yates, the deputy of London’s Metropolitan Police, resigned a day after the country’s top police officer quit and Rebekah Brooks, the former chief executive of Rupert Murdoch’s News International
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                          </div><!-- /comment item -->
+                        </li><!-- /comment -->
+                      </ol>
+                  </div><!-- /comment list -->
+
+                  <!-- comment form -->
+                  <div class="add-comment clearfix" id="addcomments1">
+
+                    <div class="comment-form">
+                        <form action="#" method="POST" id="commentForm1">
+
+                            <div class="pull-left field_text">
+                                <label class="label_title">Your Name:</label>
+                                <input type="text" name="name" value="" class="inputtext">
+                            </div>
+
+                            <div class="pull-left field_text omega">
+                                <label class="label_title">Email adress:</label>
+                                <input type="text" name="email" value="" class="inputtext">
+                            </div>
+
+                            <div class="clear"></div>
+                            <div class="field_textarea">
+                                <label class="label_title">Message:</label>
+                                <textarea cols="30" rows="10" name="message" class="textarea"></textarea>
+                            </div>
+
+                            <div class="rowSubmit clearfix">
+                                <a onclick="document.getElementById('commentForm1').submit();return false;" href="#" class="button violet"><span>SEND THIS MESSAGE</span></a>
+                                <a onclick="document.getElementById('commentForm1').reset();return false;" href="#" class="reset_form"><span>Reset fields</span></a>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                  <!--/ comment form -->
+
+                </div>
+                <div class="meta-bot">
+                  <span class="read-more">Read more</span><span class="separator">|</span><span class="total-comments">13 Comments</span>
+                </div>
+              </article><!-- / carousel item -->
+
+              <article class="post-item item">
+                <div class="post-inner">
+                  <div class="post-title">Development & Coding</div>
+                  <div class="post-entry clearfix">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <%= image_tag "temp/post-img1.png", class: "img-rounded surounded-img"-%>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+                  </div><!-- / post entry -->
+
+                  <div class="post-tags">
+                    <h3>TAGS IN THIS ARTICLE</h3>
+                    <span>DO IT YOURSELF</span>
+                    <span>MAINTENANCE</span>
+                    <span>DESIGN</span>
+                    <span>COUCH</span>
+                  </div><!-- /post tags -->
+
+                  <div class="comment_list clearfix">
+                    <h3>Already 8 comments</h3>
+                      <ol>
+                        <li class="comment clearfix">
+                          <div class="comment-item">
+                            <div class="comment_body clearfix">
+                              <div class="comment_avatar">
+                                  <%= image_tag "temp/ava1.png"-%>
+                              </div>
+                              <div class="comment_text">
+                                <a href="#" class="link-author">Mary Riley</a>
+                                <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                <div class="clear"></div>
+                                <div class="comment_entry">
+                                  Britain’s phone hacking claimed another casualty on Monday Yates, the deputy of London’s Metropolitan Police, resigned a day after the country’s top police officer quit and Rebekah Brooks, the former chief executive of Rupert Murdoch’s News International
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                          </div><!-- /comment item -->
+
+                            <ul class="children">
+                              <li class="comment clearfix">
+                                <div class="comment-item">
+                                  <div class="comment_body clearfix">
+                                    <div class="comment_avatar">
+                                        <%= image_tag "temp/ava1.png"-%>
+                                    </div>
+                                    <div class="comment_text">
+                                      <a href="#" class="link-author">Mary Riley</a>
+                                      <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                      <div class="clear"></div>
+                                      <div class="comment_entry">Rebekah Brooks, the former chief executive Rupert Murdoch’s News International was arrested on suspicion of illegally hello intercepting phone calls and bribing police.</div>
+                                    </div>
+                                    <div class="clear"></div>
+                                  </div>
+                                </div><!-- /comment item -->
+                                  <ul class="children">
+                                    <li class="comment clearfix">
+                                      <div class="comment-item">
+                                        <div class="comment_body clearfix">
+                                          <div class="comment_avatar">
+                                             <%= image_tag "temp/ava1.png"-%>
+                                          </div>
+                                          <div class="comment_text">
+                                            <a href="#" class="link-author">Mary Riley</a>
+                                            <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                            <div class="clear"></div>
+                                            <div class="comment_entry">Rebekah Brooks, the former chief executive Rupert Murdoch’s News International was arrested on suspicion of illegally hello intercepting phone calls and bribing police.</div>
+                                          </div>
+                                          <div class="clear"></div>
+                                        </div>
+                                      </div><!-- /comment item -->
+                                    </li><!-- /comment -->
+                                  </ul><!-- / children comment -->
+                              </li><!-- /comment -->
+                            </ul><!-- / children comment -->
+                        </li><!-- /comment -->
+
+                        <li class="comment clearfix">
+                          <div class="comment-item">
+                            <div class="comment_body clearfix">
+                              <div class="comment_avatar">
+                                 <%= image_tag "temp/ava1.png"-%>
+                              </div>
+                              <div class="comment_text">
+                                <a href="#" class="link-author">Mary Riley</a>
+                                <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                <div class="clear"></div>
+                                <div class="comment_entry">
+                                  Britain’s phone hacking claimed another casualty on Monday Yates, the deputy of London’s Metropolitan Police, resigned a day after the country’s top police officer quit and Rebekah Brooks, the former chief executive of Rupert Murdoch’s News International
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                          </div><!-- /comment item -->
+                        </li><!-- /comment -->
+                      </ol>
+                  </div><!-- /comment list -->
+
+                  <!-- comment form -->
+                  <div class="add-comment clearfix" id="addcomments2">
+
+                    <div class="comment-form">
+                        <form action="#" method="POST" id="commentForm2">
+
+                            <div class="pull-left field_text">
+                                <label class="label_title">Your Name:</label>
+                                <input type="text" name="name" value="" class="inputtext">
+                            </div>
+
+                            <div class="pull-left field_text omega">
+                                <label class="label_title">Email adress:</label>
+                                <input type="text" name="email" value="" class="inputtext">
+                            </div>
+
+                            <div class="clear"></div>
+                            <div class="field_textarea">
+                                <label class="label_title">Message:</label>
+                                <textarea cols="30" rows="10" name="message" class="textarea"></textarea>
+                            </div>
+
+                            <div class="rowSubmit clearfix">
+                                <a onclick="document.getElementById('commentForm2').submit();return false;" href="#" class="button violet"><span>SEND THIS MESSAGE</span></a>
+                                <a onclick="document.getElementById('commentForm2').reset();return false;" href="#" class="reset_form" ><span>Reset fields</span></a>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                  <!--/ comment form -->
+
+                </div>
+                <div class="meta-bot">
+                  <span class="read-more">Read more</span><span class="separator">|</span><span class="total-comments">13 Comments</span>
+                </div>
+              </article><!-- / carousel item -->
+
+              <article class="post-item item">
+                <div class="post-inner">
+                  <div class="post-title">Some of My Ideas</div>
+                  <div class="post-entry clearfix">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <%= image_tag "temp/post-img1.png", class: "img-rounded surounded-img" -%>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+                  </div><!-- / post entry -->
+
+                  <div class="post-tags">
+                    <h3>TAGS IN THIS ARTICLE</h3>
+                    <span>DO IT YOURSELF</span>
+                    <span>MAINTENANCE</span>
+                    <span>DESIGN</span>
+                    <span>COUCH</span>
+                  </div><!-- /post tags -->
+
+                  <div class="comment_list clearfix">
+                    <h3>Already 8 comments</h3>
+                      <ol>
+                        <li class="comment clearfix">
+                          <div class="comment-item">
+                            <div class="comment_body clearfix">
+                              <div class="comment_avatar">
+                                 <%= image_tag "temp/ava1.png"-%>
+                              </div>
+                              <div class="comment_text">
+                                <a href="#" class="link-author">Mary Riley</a>
+                                <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                <div class="clear"></div>
+                                <div class="comment_entry">
+                                  Britain’s phone hacking claimed another casualty on Monday Yates, the deputy of London’s Metropolitan Police, resigned a day after the country’s top police officer quit and Rebekah Brooks, the former chief executive of Rupert Murdoch’s News International
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                          </div><!-- /comment item -->
+
+                            <ul class="children">
+                              <li class="comment clearfix">
+                                <div class="comment-item">
+                                  <div class="comment_body clearfix">
+                                    <div class="comment_avatar">
+                                        <%= image_tag "temp/ava1.png"-%>
+                                    </div>
+                                    <div class="comment_text">
+                                      <a href="#" class="link-author">Mary Riley</a>
+                                      <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                      <div class="clear"></div>
+                                      <div class="comment_entry">Rebekah Brooks, the former chief executive Rupert Murdoch’s News International was arrested on suspicion of illegally hello intercepting phone calls and bribing police.</div>
+                                    </div>
+                                    <div class="clear"></div>
+                                  </div>
+                                </div><!-- /comment item -->
+                                  <ul class="children">
+                                    <li class="comment clearfix">
+                                      <div class="comment-item">
+                                        <div class="comment_body clearfix">
+                                          <div class="comment_avatar">
+                                              <%= image_tag "temp/ava1.png"-%>
+                                          </div>
+                                          <div class="comment_text">
+                                            <a href="#" class="link-author">Mary Riley</a>
+                                            <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                            <div class="clear"></div>
+                                            <div class="comment_entry">Rebekah Brooks, the former chief executive Rupert Murdoch’s News International was arrested on suspicion of illegally hello intercepting phone calls and bribing police.</div>
+                                          </div>
+                                          <div class="clear"></div>
+                                        </div>
+                                      </div><!-- /comment item -->
+                                    </li><!-- /comment -->
+                                  </ul><!-- / children comment -->
+                              </li><!-- /comment -->
+                            </ul><!-- / children comment -->
+                        </li><!-- /comment -->
+
+                        <li class="comment clearfix">
+                          <div class="comment-item">
+                            <div class="comment_body clearfix">
+                              <div class="comment_avatar">
+                                <%= image_tag "temp/ava1.png"-%>
+                              </div>
+                              <div class="comment_text">
+                                <a href="#" class="link-author">Mary Riley</a>
+                                <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                <div class="clear"></div>
+                                <div class="comment_entry">
+                                  Britain’s phone hacking claimed another casualty on Monday Yates, the deputy of London’s Metropolitan Police, resigned a day after the country’s top police officer quit and Rebekah Brooks, the former chief executive of Rupert Murdoch’s News International
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                          </div><!-- /comment item -->
+                        </li><!-- /comment -->
+                      </ol>
+                  </div><!-- /comment list -->
+
+                  <!-- comment form -->
+                  <div class="add-comment clearfix" id="addcomments3">
+
+                    <div class="comment-form">
+                        <form action="#" method="POST" id="commentForm3">
+
+                            <div class="pull-left field_text">
+                                <label class="label_title">Your Name:</label>
+                                <input type="text" name="name" value="" class="inputtext">
+                            </div>
+
+                            <div class="pull-left field_text omega">
+                                <label class="label_title">Email adress:</label>
+                                <input type="text" name="email" value="" class="inputtext">
+                            </div>
+
+                            <div class="clear"></div>
+                            <div class="field_textarea">
+                                <label class="label_title">Message:</label>
+                                <textarea cols="30" rows="10" name="message" class="textarea"></textarea>
+                            </div>
+
+                            <div class="rowSubmit clearfix">
+                                <a onclick="document.getElementById('commentForm3').submit();return false;" href="#" class="button violet"><span>SEND THIS MESSAGE</span></a>
+                                <a onclick="document.getElementById('commentForm3').reset();return false;" href="#" class="reset_form"><span>Reset fields</span></a>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                  <!--/ comment form -->
+                </div>
+                <div class="meta-bot">
+                  <span class="read-more">Read more</span><span class="separator">|</span><span class="total-comments">13 Comments</span>
+                </div>
+              </article><!-- / carousel item -->
+
+              </div>
+            </div> <!-- /post category -->
+
+            <div class="post-category carousel slide" data-ride="carousel" data-index="2">
+              <div class="carousel-inner">
+              <article class="post-item item active">
+                <div class="post-inner">
+                  <div class="post-title">Tutorials & Experiments</div>
+                  <div class="post-entry clearfix">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <%= image_tag "temp/post-img1.png", class: "img-rounded surounded-img" -%>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis, quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis. Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.</p>
+                  </div><!-- / post entry -->
+
+                  <div class="post-tags">
+                    <h3>TAGS IN THIS ARTICLE</h3>
+                    <span>DO IT YOURSELF</span>
+                    <span>MAINTENANCE</span>
+                    <span>DESIGN</span>
+                    <span>COUCH</span>
+                  </div><!-- /post tags -->
+
+                  <div class="comment_list clearfix">
+                    <h3>Already 8 comments</h3>
+                      <ol>
+                        <li class="comment clearfix">
+                          <div class="comment-item">
+                            <div class="comment_body clearfix">
+                              <div class="comment_avatar">
+                                  <%= image_tag "temp/ava1.png"-%>
+                              </div>
+                              <div class="comment_text">
+                                <a href="#" class="link-author">Mary Riley</a>
+                                <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                <div class="clear"></div>
+                                <div class="comment_entry">
+                                  Britain’s phone hacking claimed another casualty on Monday Yates, the deputy of London’s Metropolitan Police, resigned a day after the country’s top police officer quit and Rebekah Brooks, the former chief executive of Rupert Murdoch’s News International
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                          </div><!-- /comment item -->
+
+                            <ul class="children">
+                              <li class="comment clearfix">
+                                <div class="comment-item">
+                                  <div class="comment_body clearfix">
+                                    <div class="comment_avatar">
+                                      <%= image_tag "temp/ava1.png"-%>
+                                    </div>
+                                    <div class="comment_text">
+                                      <a href="#" class="link-author">Mary Riley</a>
+                                      <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                      <div class="clear"></div>
+                                      <div class="comment_entry">Rebekah Brooks, the former chief executive Rupert Murdoch’s News International was arrested on suspicion of illegally hello intercepting phone calls and bribing police.</div>
+                                    </div>
+                                    <div class="clear"></div>
+                                  </div>
+                                </div><!-- /comment item -->
+                                  <ul class="children">
+                                    <li class="comment clearfix">
+                                      <div class="comment-item">
+                                        <div class="comment_body clearfix">
+                                          <div class="comment_avatar">
+                                              <%= image_tag "temp/ava1.png"-%>
+                                          </div>
+                                          <div class="comment_text">
+                                            <a href="#" class="link-author">Mary Riley</a>
+                                            <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                            <div class="clear"></div>
+                                            <div class="comment_entry">Rebekah Brooks, the former chief executive Rupert Murdoch’s News International was arrested on suspicion of illegally hello intercepting phone calls and bribing police.</div>
+                                          </div>
+                                          <div class="clear"></div>
+                                        </div>
+                                      </div><!-- /comment item -->
+                                    </li><!-- /comment -->
+                                  </ul><!-- / children comment -->
+                              </li><!-- /comment -->
+                            </ul><!-- / children comment -->
+                        </li><!-- /comment -->
+
+                        <li class="comment clearfix">
+                          <div class="comment-item">
+                            <div class="comment_body clearfix">
+                              <div class="comment_avatar">
+                                 <%= image_tag "temp/ava1.png"-%>
+                              </div>
+                              <div class="comment_text">
+                                <a href="#" class="link-author">Mary Riley</a>
+                                <span class="comment-date">21 JAN 2013</span> | <a href="" class="link-reply">reply</a>
+
+                                <div class="clear"></div>
+                                <div class="comment_entry">
+                                  Britain’s phone hacking claimed another casualty on Monday Yates, the deputy of London’s Metropolitan Police, resigned a day after the country’s top police officer quit and Rebekah Brooks, the former chief executive of Rupert Murdoch’s News International
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                          </div><!-- /comment item -->
+                        </li><!-- /comment -->
+                      </ol>
+                  </div><!-- /comment list -->
+
+                  <!-- comment form -->
+                  <div class="add-comment clearfix" id="addcomments4">
+
+                    <div class="comment-form">
+                        <form action="#" method="POST" id="commentForm4">
+
+                            <div class="pull-left field_text">
+                                <label class="label_title">Your Name:</label>
+                                <input type="text" name="name" value="" class="inputtext">
+                            </div>
+
+                            <div class="pull-left field_text omega">
+                                <label class="label_title">Email adress:</label>
+                                <input type="text" name="email" value="" class="inputtext">
+                            </div>
+
+                            <div class="clear"></div>
+                            <div class="field_textarea">
+                                <label class="label_title">Message:</label>
+                                <textarea cols="30" rows="10" name="message" class="textarea"></textarea>
+                            </div>
+
+                            <div class="rowSubmit clearfix">
+                                <a onclick="document.getElementById('commentForm4').submit();return false;" href="#" class="button violet" ><span>SEND THIS MESSAGE</span></a>
+                                <a onclick="document.getElementById('commentForm4').reset();return false;" href="#" class="reset_form"><span>Reset fields</span></a>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                  <!--/ comment form -->
+
+                </div>
+                <div class="meta-bot">
+                  <span class="read-more">Read more</span><span class="separator">|</span><span class="total-comments">13 Comments</span>
+                </div>
+              </article><!-- / carousel item -->
+
+
+              </div>
+            </div> <!-- /post category -->
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-6">
+            <%= image_tag "aslant-line1.png", class: "category-aslant-line hidden-xs" %>
+
+            <ul class="widget-category pull-right">
+              <li class="category-item" data-index="1"><span>Weekly Freebies</span><%= image_tag "icons/ico_1.png" %></li>
+              <li class="category-item" data-index="2"><span>Development &amp; Coding</span><%= image_tag "icons/ico_2.png" %></li>
+              <li class="category-item" data-index="3"><span>Some of My Ideas</span><%= image_tag "icons/ico_3.png" %></li>
+              <li class="category-item " data-index="4"><span>Tutorials &amp; Experiments</span><%= image_tag "icons/ico_4.png" %></li>
+              <li class="category-item" data-index="5"><span>Personal Stuff &amp; Thoughts</span><%= image_tag "icons/ico_5.png" %></li>
+              <li class="category-item" data-index="6"><span>Image Gallery / Flickr</span><%= image_tag "icons/ico_6.png" %></li>
+              <li class="category-item" data-index="7"><span>Sponsored Contests</span><%= image_tag "icons/ico_7.png" %></li>
+              <li class="category-item" data-index="8"><span>Security &amp; Backup Advise</span><%= image_tag "icons/ico_8.png" %></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="clearfix sixth-section">
+    <div class="inner">
+      <div class="container">
+
+        <div class="section-ico">
+            <div class="ico-bg sixth-section-ico-bg"></div>
+            <%= image_tag "icons/contact-ico.png" %>
+            <h5 class="text-orange">Contact</h5>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-6">
+                    <div class="contact_form clearfix text-left">
+                        <form action="#" method="POST" id="contact_form" class="ajax_form">
+                            <div class="pull-left field_text">
+                                <label class="label_title" for="contact_email">Email Adress:</label>
+                                <input type="text" name="contact_email" id="contact_email" value="" class="inputField required">
+                                <span id="symbol"></span>
+                            </div>
+                            <div class="pull-left field_select omega">
+                                <label class="label_title">Subject:</label>
+                                <select class="select_styled" name="contact_subject" id="contact_subject">
+                                    <option value="1">Subject 1</option>
+                                    <option value="2">Subject 2</option>
+                                    <option value="3">Subject 3</option>
+                                    <option value="3">Subject 4</option>
+                                </select>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="field_textarea">
+                                <label class="label_title" for="contact_textarea">Message:</label>
+                                <textarea cols="30" rows="10" name="contact_message" id="contact_message" class="textareaField" id="contact_textarea"></textarea>
+                            </div>
+                            <div class="field_submit">
+                                <a href="#" class="button orange" id="send"><span>SEND THIS MESSAGE</span></a>
+                                <a onclick="document.getElementById('contact_form').reset();return false;" href="#"
+                                   class="reset_form"><span>Reset fields</span></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+
+                    <script>
+                        $(window).load(function () {
+                            $("#map1").gMap({
+                                markers: [
+                                    {
+                                        latitude: 41.881831,
+                                        longitude: -87.629814}
+                                ],
+                                zoom: 10,
+                                disableDefaultUI: true
+                            });
+                        });
+                    </script>
+                    <div class="contact_map">
+                        <!-- SVG begins -->
+                        <svg width="100%" height="230px">
+                            <defs>
+                                <mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                                    <image width="350px" height="230px" xlink:href="<%= asset_url "polygon.png"%>"></image>
+                                </mask>
+                            </defs>
+                            <foreignObject width="100%" height="230px" style="mask:url(#mask);max-width: 100%">
+                                <div id="map1" class="map frame_box"></div>
+                            </foreignObject>
+                        </svg>
+                        <!-- SVG ends -->
+                        <%= image_tag "aslanta-line2.png", class: "map-aslant-line" %>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer">
+    <div class="inner">
+        <div class="container">
+            <div class="footer_nav clearfix">
+                <ul>
+                    <li class="white-bg"><a href="#home" data-toggle="tooltip" title="Home"></a></li><!--
+                    --><li class="blue-bg"><a href="#works" data-toggle="tooltip" title="Works"></a></li><!--
+                    --><li class="green-bg"><a href="#services" data-toggle="tooltip" title="Services"></a></li><!--
+                    --><li class="pink-bg"><a href="#about" data-toggle="tooltip" title="About"></a></li><!--
+                    --><li class="purple-bg"><a href="#blog" data-toggle="tooltip" title="Blog"></a></li><!--
+                    --><li class="orange-bg"><a href="#contact" data-toggle="tooltip" title="Contact"></a></li><!-- -->
+                </ul>
+            </div>
+            <div class="copyright">
+                <span>Copyright © 2013 Frank Maynard   |   WordPress theme by <a
+                        href="http://themefuse.com">Themefuse </a>  |  Icons & GUI from <a
+                        href="http://pixelkit.com">PixelKit</a></span>
+            </div>
+            <div class="footer_socials">
+                <a href="#"><%= image_tag "icons/fb_ico.png" %></a>
+                <a href="#"><%= image_tag "icons/google_ico.png" %></a>
+                <a href="#"><%= image_tag "icons/tw_ico.png" %></a>
+                <a href="#"><%= image_tag "icons/em_ico.png" %></a>
+                <a href="#"><%= image_tag "icons/dribble_ico.png" %></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<h1>Exibindo detalhes dos Trabalhos</h1>
+
+<p>Categoria: <%= @work.category.name %></p>
+<p>Nome: <%= @work.name %></p>
+<p>Link: <%= @work.link %></p>
+<p>Tags: <%= @work.tags %></p>
+<p>Descrição: <%= @work.description %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @work.image.thumb.url %>
+</p>
+
+
+
+<p>Created_at: <%= @work.created_at %></p>
+<p>Updated_at: <%= @work.updated_at %></p>

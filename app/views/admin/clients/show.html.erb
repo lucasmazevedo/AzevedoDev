@@ -1,0 +1,14 @@
+<h1>Exibindo detalhes dos Clientes</h1>
+
+<p>Nome: <%= @client.name %></p>
+<p>Endereço: <%= @client.address %></p>
+<p>Responsável: <%= @client.onwer %></p>
+<p>Telefone: <%= @client.phone %></p>
+<p>Celular: <%= @client.cellphone %></p>
+<p>Email: <%= @client.email %></p>
+<p>
+  <strong>Logomarca:</strong>
+  <%= image_tag @client.logotype.thumb.url %>
+</p>
+<p>Created_at: <%= @client.created_at %></p>
+<p>Updated_at: <%= @client.updated_at %></p>
