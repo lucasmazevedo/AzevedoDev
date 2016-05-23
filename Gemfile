@@ -31,6 +31,7 @@ gem 'twitter-bootstrap-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
+gem 'pg'
 gem 'declarative_authorization'
 
 # Use ActiveModel has_secure_password
